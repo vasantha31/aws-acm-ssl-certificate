@@ -4,6 +4,11 @@ This terraform module will create the following services:
 - SSL Certificate
 - Route53 Record
 
+## Licence:
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+MIT Licence. See [Licence](LICENCE) for full details.
+
 # Usage Instructions:
 ## Variables
 | Parameter             | Type    | Description                                                                                                                                                          | Default       | Required |
