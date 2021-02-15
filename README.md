@@ -10,6 +10,16 @@ This terraform module will create the following services:
 MIT Licence. See [Licence](LICENCE) for full details.
 
 # Usage Instructions:
+## Example:
+```terraform
+module "ssl" {
+  source = "github.com/terrablocks/aws-acm-ssl-certificate.git"
+
+  domain_names = ["example.com", "*.example.com"]
+  hosted_zone  = "example.com"
+}
+```
+
 ## Variables
 | Parameter             | Type    | Description                                                                                                                                                          | Default       | Required |
 |-----------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|----------|
@@ -19,7 +29,7 @@ MIT Licence. See [Licence](LICENCE) for full details.
 ## Outputs
 | Parameter           | Type   | Description               |
 |---------------------|--------|---------------------------|
-| cert_arn           | string | ARN of SSL certificate            |
+| arn           | string | ARN of SSL certificate            |
 
 ## Deployment
 - `terraform init` - download plugins required to deploy resources
