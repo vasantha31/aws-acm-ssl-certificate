@@ -32,7 +32,7 @@ resource "aws_route53_record" "cert_record" {
 }
 
 resource "aws_acm_certificate_validation" "cert_validation" {
-  count                   = var.pca_arn == null ? 0 : 1
+  count                   = var.pca_arn == null ? 1 : 0
   certificate_arn         = aws_acm_certificate.cert.arn
   validation_record_fqdns = [for record in aws_route53_record.cert_record : record.fqdn]
 }
