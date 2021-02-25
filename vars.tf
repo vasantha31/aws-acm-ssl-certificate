@@ -7,3 +7,8 @@ variable "hosted_zone" {}
 variable "pca_arn" {
   default = null
 }
+
+variable "tags" {
+  type = map
+  default = {}
+}

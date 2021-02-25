@@ -38,6 +38,7 @@ module "ssl" {
 | domain_names                | list  | List of domain names to be associated with SSL certificate                                                                                                                                  |              | Y        |
 | hosted_zone            | string    | Name of hosted zone to create DNS records                                                                                                              |              | Y        |
 | pca_arn            | string    | ARN of private certificate authority to sign and generate private certificate                                                                                   |              | N        |
+| tags            | map    | Map of key value pair to assign to certificate                                                                 |              | N        |
 
 ## Outputs
 | Parameter           | Type   | Description               |

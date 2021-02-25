@@ -3,6 +3,7 @@ resource "aws_acm_certificate" "cert" {
   subject_alternative_names = length(var.domain_names) > 1 ? slice(var.domain_names, 1, length(var.domain_names)) : null
   validation_method         = var.pca_arn == null ? "DNS" : null
   certificate_authority_arn = var.pca_arn
+  tags = var.tags
 }
 
 data "aws_route53_zone" "zone" {
