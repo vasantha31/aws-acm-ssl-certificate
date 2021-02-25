@@ -1,5 +1,5 @@
 variable "domain_names" {
-  type = list
+  type = list(any)
 }
 
 variable "hosted_zone" {}
@@ -9,6 +9,6 @@ variable "pca_arn" {
 }
 
 variable "tags" {
-  type = map
+  type    = map(any)
   default = {}
 }
