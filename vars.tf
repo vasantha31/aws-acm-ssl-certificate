@@ -3,3 +3,7 @@ variable "domain_names" {
 }
 
 variable "hosted_zone" {}
+
+variable "pca_arn" {
+  default = null
+}
