@@ -35,9 +35,9 @@ module "ssl" {
 ## Variables
 | Parameter             | Type    | Description                                                                                                                                                          | Default       | Required |
 |-----------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|----------|
-| domain_names                | list  | List of domain names to be associated with SSL certificate                                                                                                                                  | -              | Y        |
-| hosted_zone            | string    | Name of hosted zone to create DNS records                                                                                                              | -              | Y        |
-| pca_arn            | string    | ARN of private certificate authority to sign and generate private certificate                                                                                   | -              | N        |
+| domain_names                | list  | List of domain names to be associated with SSL certificate                                                                                                                                  |              | Y        |
+| hosted_zone            | string    | Name of hosted zone to create DNS records                                                                                                              |              | Y        |
+| pca_arn            | string    | ARN of private certificate authority to sign and generate private certificate                                                                                   |              | N        |
 
 ## Outputs
 | Parameter           | Type   | Description               |
