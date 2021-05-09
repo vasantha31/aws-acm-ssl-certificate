@@ -1,16 +1,13 @@
 # Create a Public/Private SSL Certificate using AWS ACM
 
-This terraform module will create the following services:
+![License](https://img.shields.io/github/license/terrablocks/aws-acm-ssl-certificate?style=for-the-badge) ![Tests](https://img.shields.io/github/workflow/status/terrablocks/aws-acm-ssl-certificate/tests/master?label=Test&style=for-the-badge) ![Checkov](https://img.shields.io/github/workflow/status/terrablocks/aws-acm-ssl-certificate/checkov/master?label=Checkov&style=for-the-badge) ![Commit](https://img.shields.io/github/last-commit/terrablocks/aws-acm-ssl-certificate?style=for-the-badge) ![Release](https://img.shields.io/github/v/release/terrablocks/aws-acm-ssl-certificate?style=for-the-badge)
+
+This terraform module will deploy the following services:
 - SSL Certificate
 - Route53 Record
 
-## Licence:
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
-MIT Licence. See [Licence](LICENCE) for full details.
-
-# Usage Instructions:
-## Example:
+# Usage Instructions
+## Example
 ### Public SSL
 ```terraform
 module "ssl" {
@@ -20,7 +17,6 @@ module "ssl" {
   hosted_zone  = "example.com"
 }
 ```
-
 ### Private SSL
 ```terraform
 module "ssl" {
@@ -32,21 +28,24 @@ module "ssl" {
 }
 ```
 
-## Variables
-| Parameter             | Type    | Description                                                                                                                                                          | Default       | Required |
-|-----------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|----------|
-| domain_names                | list  | List of domain names to be associated with SSL certificate                                                                                                                                  |              | Y        |
-| hosted_zone            | string    | Name of hosted zone to create DNS records                                                                                                              |              | Y        |
-| pca_arn            | string    | ARN of private certificate authority to sign and generate private certificate                                                                                   |              | N        |
-| tags            | map    | Map of key value pair to assign to certificate                                                                 |              | N        |
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+| aws | >= 3.37.0 |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| domain_names | List of domain names to be associated with SSL certificate | `list(string)` | n/a | yes |
+| hosted_zone | Name of hosted zone to create DNS records | `string` | n/a | yes |
+| pca_arn | ARN of private certificate authority to sign and generate private certificate | `string` | `null` | no |
+| tags | Map of key value pair to assign to certificate | `map(string)` | `{}` | no |
 
 ## Outputs
-| Parameter           | Type   | Description               |
-|---------------------|--------|---------------------------|
-| arn           | string | ARN of SSL certificate            |
 
-## Deployment
-- `terraform init` - download plugins required to deploy resources
-- `terraform plan` - get detailed view of resources that will be created, deleted or replaced
-- `terraform apply -auto-approve` - deploy the template without confirmation (non-interactive mode)
-- `terraform destroy -auto-approve` - terminate all the resources created using this template without confirmation (non-interactive mode)
+| Name | Description |
+|------|-------------|
+| arn | ARN of SSL certificate |
